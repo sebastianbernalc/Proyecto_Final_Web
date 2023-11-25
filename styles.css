@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+#jugadorInfo {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#jugadorInfo{
+    display:none;
+}
+
+.error_buscar{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+
+.error_crear{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+
+.error_eliminar{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}

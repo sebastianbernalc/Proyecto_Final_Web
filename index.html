@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Aplicación</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <h1>Web Team</h1>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="IdJugador" spellcheck="false">
+            <button> Buscar </button>
+        </div>
+        <div class="error_buscar">
+            <p>Id de jugador no válido</p>
+        </div>
+        <div id="jugadorInfo"></div>
+        <div class="crear">
+            <h1>Registrar Jugador</h1>
+            <form id="jugadorForm" class="createForm ">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required><br>
+        
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" required><br>
+        
+                <label for="altura">Altura:</label>
+                <input type="number" id="altura" required><br>
+        
+                <label for="nacionalidad">Nacionalidad:</label>
+                <input type="text" id="nacionalidad" required><br>
+        
+                <label for="club">Club:</label>
+                <input type="text" id="club" required><br>
+        
+                <label for="posicion">Posición:</label>
+                <input type="text" id="posicion" required><br>
+        
+                <label for="goles">Goles:</label>
+                <input type="number" id="goles" required><br>
+            </form>
+            <div class="error_crear">
+                <p>Rellene todos los campos</p>
+            </div>
+            <div class="create">
+                <button id="CreateButton">Registrar</button>
+            </div>
+
+        </div>
+        <div class="eliminar">
+            <h1>Eliminar Jugador</h1>
+            <label for="eliminarInput">ID del Jugador:</label>
+            <input type="text" id="eliminarInput" required><br>
+            <div class="error_eliminar">
+                <p>Rellene todos los campos</p>
+            </div>
+            <div class="delete">
+                <button id="DeleteButton">Eliminar</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
