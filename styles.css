@@ -57,7 +57,7 @@ body {
 }
 
 .search{
-    display: none;
+    display: none; /*block*/
     
 }
 
