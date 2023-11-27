@@ -90,18 +90,18 @@ body {
 }
 
 p, h1, h2, h3, h4, h5, h6, label {
-    color:rgb(0, 0, 0); /* Reemplaza "tu-color-aqui" con el color deseado */
+    color:rgb(0, 0, 0); 
     font-family: "Facon";
 }
 
 .createForm {
     display: flex;
     flex-direction: column;
-    gap: 1px; /* Espaciado vertical entre elementos */
+    gap: 1px; 
 }
 
 .createForm label {
-    margin-bottom: 1px; /* Espaciado inferior para las etiquetas */
+    margin-bottom: 1px; 
 }
 button{
     font-family: "Facon";
