@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Aplicación</title>
+    <title>Web League Cup</title>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="icon.png" type="image/x-icon">
 </head>
 <body>
-    <h1>Web Team</h1>
+   
     <div class="card">
+        <h1>Web Team</h1>
+        <div class="main_buttons">
+            <button id="SearchButton">Buscar</button>
+            <button id="CreateButton">Crear</button>
+            <button id="DeleteButton">Eliminar</button>
+            <button id="UpdateBotton1">Actualizar</button>
+        </div>
+
         <div class="search">
-            <input type="text" placeholder="IdJugador" spellcheck="false">
+            <h1>Buscar Jugador</h1>
+            <input type="number" placeholder="IdJugador" spellcheck="false">
             <button> Buscar </button>
         </div>
         <div class="error_buscar">
@@ -54,13 +64,52 @@
         <div class="eliminar">
             <h1>Eliminar Jugador</h1>
             <label for="eliminarInput">ID del Jugador:</label>
-            <input type="text" id="eliminarInput" required><br>
+            <input type="number" id="eliminarInput" required><br>
             <div class="error_eliminar">
                 <p>Rellene todos los campos</p>
             </div>
             <div class="delete">
                 <button id="DeleteButton">Eliminar</button>
             </div>
+        </div>
+
+        <div class="actualizar">
+            <h1> Actualizar Jugador</h1>
+            <form id="jugadorForm" class="createForm ">
+                <label for="id">Id:</label>
+                <input type="text" id="id_update" required><br>
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre_update"><br>
+        
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad_update"><br>
+        
+                <label for="altura">Altura:</label>
+                <input type="number" id="altura_update"><br>
+        
+                <label for="nacionalidad">Nacionalidad:</label>
+                <input type="text" id="nacionalidad_update"><br>
+        
+                <label for="club">Club:</label>
+                <input type="text" id="club_update"><br>
+        
+                <label for="posicion">Posición:</label>
+                <input type="text" id="posicion_update"><br>
+        
+                <label for="goles">Goles:</label>
+                <input type="number" id="goles_update"><br>
+            </form>
+            <div class="error_actualizar">
+                <p>Id no valido</p>
+            </div>
+            <div class="error_actualizar_dato">
+                <p>Rellene por lo menos 1 dato</p>
+            </div>
+            <div class="update">
+                <button id="UpdateBotton">Actualizar</button>
+            </div>
+
         </div>
     </div>
     

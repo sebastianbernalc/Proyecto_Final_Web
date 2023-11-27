@@ -1,9 +1,14 @@
 body {
-    font-family: Arial, sans-serif;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://images.unsplash.com/photo-1589487391730-58f20eb2c308?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 }
+
 #jugadorInfo {
-    border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -34,4 +39,70 @@ body {
     font-size: 14px;
     margin-top: 10px;
     display: none;
+}
+
+.error_actualizar{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+.error_actualizar_dato{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+
+.search{
+    display: none;
+    
+}
+
+
+.crear{
+    display: none;
+}
+
+.actualizar{
+    display: none;
+}
+
+.eliminar{
+    display: none;
+}
+
+.card {
+    width: 400px; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+    background-color: rgb(156, 178, 122);
+}
+
+.main_buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    height: 30px;
+}
+
+p, h1, h2, h3, h4, h5, h6, label {
+    color:rgb(0, 0, 0); /* Reemplaza "tu-color-aqui" con el color deseado */
+    font-family: "Facon";
+}
+
+.createForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1px; /* Espaciado vertical entre elementos */
+}
+
+.createForm label {
+    margin-bottom: 1px; /* Espaciado inferior para las etiquetas */
+}
+button{
+    font-family: "Facon";
 }

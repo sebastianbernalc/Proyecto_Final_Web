@@ -8,6 +8,7 @@ import (
 	"project_final/models"
 	repository "project_final/repository"
 
+	cors "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/jmoiron/sqlx"
 	"github.com/lib/pq"
@@ -22,12 +23,6 @@ func ConnectDB(url, driver string) (*sqlx.DB, error) {
 	}
 	log.Printf("Conexion a PostgreeSQL exitosa a la base de datos: %#v", db)
 	return db, nil
-}
-
-func enableCors(w *http.ResponseWriter) {
-	(*w).Header().Set("Access-Control-Allow-Origin", "*")
-	(*w).Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
-	(*w).Header().Set("Access-Control-Allow-Headers", "Content-Type")
 }
 
 func main() {
@@ -57,12 +52,6 @@ func main() {
 	router := mux.NewRouter()
 
 	// Manejador CORS para todas las rutas
-	router.Use(func(next http.Handler) http.Handler {
-		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			enableCors(&w)
-			next.ServeHTTP(w, r)
-		})
-	})
 
 	router.Handle("/jugadores", http.HandlerFunc(handler.LeerJugadores)).Methods(http.MethodGet)
 	router.Handle("/jugadores/{id}", http.HandlerFunc(handler.LeerJugador)).Methods(http.MethodGet)
@@ -70,5 +59,8 @@ func main() {
 	router.Handle("/jugadores/{id}", http.HandlerFunc(handler.ActualizarJugador)).Methods(http.MethodPatch)
 	router.Handle("/jugadores/{id}", http.HandlerFunc(handler.EliminarJugador)).Methods(http.MethodDelete)
 
-	log.Fatal(http.ListenAndServe(":8080", router))
+	headers := cors.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"})
+	methods := cors.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE", "PATCH"})
+	origins := cors.AllowedOrigins([]string{"*"})
+	http.ListenAndServe(":8080", cors.CORS(headers, methods, origins)(router))
 }
